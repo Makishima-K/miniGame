@@ -1,0 +1,63 @@
+Name: League of Legends Lore Quiz
+Cout questions: 10  
+Questions: Кто был первым чемпионом, созданным для League of Legends?
+Answer Err1: Гарен
+Answer Err2: Акали
+Answer Err3: Зед
+Answer Correct: Райз
+Cost: 100  
+Questions: Как зовут сестру Ари, которая также является чемпионом?
+Answer Err1: Катарина
+Answer Err2: Люкс
+Answer Err3: Джинкс
+Answer Correct: Акали
+Cost: 200  
+Questions: Какой регион известен своими песчаными пустынями и древними руинами?
+Answer Err1: Ноксус
+Answer Err2: Демасия
+Answer Err3: Иония
+Answer Correct: Шурима
+Cost: 300  
+Questions: Какой чемпион носит титул "Король Троллей"?
+Answer Err1: Триндамир
+Answer Err2: Твистед Фейт
+Answer Err3: Гекарим
+Answer Correct: Тundle
+Cost: 400  
+Questions: Какой артефакт дал Вейн её силу охотиться на существ тьмы?
+Answer Err1: Клинок Падшего Короля
+Answer Err2: Арбалет её семьи
+Answer Err3: Посох Вечности
+Answer Correct: Серебряные болты
+Cost: 500  
+Questions: Как зовут дракона, которого победил Пантеон?
+Answer Err1: Шивир
+Answer Err2: Аурелион Сол
+Answer Err3: Смоулдер
+Answer Correct: Соляри
+Cost: 600  
+Questions: Какой чемпион был проклят и превращён в кота?
+Answer Err1: Рengar
+Answer Err2: Нидали
+Answer Err3: Акшан
+Answer Correct: Юми
+Cost: 700  
+Questions: Какой регион является родиной Йордлов?
+Answer Err1: Пилтовер
+Answer Err2: Заун
+Answer Err3: Иония
+Answer Correct: Бандл Сити
+Cost: 800  
+Questions: Кто основал Ноксус как империю силы?
+Answer Err1: Свейн
+Answer Err2: Дариус
+Answer Err3: Ле Блан
+Answer Correct: Мордекайзер
+Cost: 900  
+Questions: Как зовут меч, который Аatroкс использует как своё оружие?
+Answer Err1: Клинок Рассвета
+Answer Err2: Кровопийца
+Answer Err3: Тёмный Клинок
+Answer Correct: Живой Клинок
+Cost: 1000  
+

@@ -1,0 +1,15 @@
+Name: Ok
+Cout questions: 2
+Questions: "2"+"2"?
+Answer Err1: 4
+Answer Err2: 5
+Answer Err3: 6
+Answer Correct: 22
+Cost: 100
+Questions: "2"+"3"?
+Answer Err1: 4
+Answer Err2: 5
+Answer Err3: 6
+Answer Correct: 23
+Cost: 200
+

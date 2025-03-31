@@ -1,0 +1,14 @@
+Name: Title game
+Cout questions: integer
+Questions: string
+Answer Err1: string
+Answer Err2: string
+Answer Err3: string
+Answer Correct: string
+Cost: integer
+Questions: string 
+Answer Err1: string
+Answer Err2: string
+Answer Err3: string
+Answer Correct: string
+Cost: integer

@@ -1,0 +1,37 @@
+Name: Physics Challenge
+Cout questions: 5
+
+Questions: What is the unit of force?
+Answer Err1: Joule
+Answer Err2: Watt
+Answer Err3: Pascal
+Answer Correct: Newton
+Cost: 100
+
+Questions: What is the speed of light in vacuum?
+Answer Err1: 300,000 m/s
+Answer Err2: 150,000 km/s
+Answer Err3: 1,000,000 km/h
+Answer Correct: 299,792 km/s
+Cost: 200
+
+Questions: Who formulated the three laws of motion?
+Answer Err1: Albert Einstein
+Answer Err2: Galileo Galilei
+Answer Err3: James Clerk Maxwell
+Answer Correct: Isaac Newton
+Cost: 150
+
+Questions: What is the acceleration due to gravity on Earth?
+Answer Err1: 8.9 m/s²
+Answer Err2: 12 m/s²
+Answer Err3: 5.5 m/s²
+Answer Correct: 9.8 m/s²
+Cost: 175
+
+Questions: Which law explains why rockets work in space?
+Answer Err1: First Law of Thermodynamics
+Answer Err2: Ohm's Law
+Answer Err3: Archimedes' Principle
+Answer Correct: Newton's Third Law
+Cost: 250
