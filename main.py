@@ -60,11 +60,11 @@ question1={}
 
 
 
-color_digits = "#F5F5DC"  # Бежевый для цифр и точки
-color_functions = "#4682B4"  # Томатный красный для функциональных кнопок
-color_equals = "#FFD700"  # Оранжевый для кнопки "="
-background_color = "#a1c4b6"  # Светло-бежевый фон калькулятора #32CD32
-button_relief = "raised"  # Тип рельефа кнопок
+color_digits = "#F5F5DC"  
+color_functions = "#4682B4"  
+color_equals = "#FFD700"  
+background_color = "#a1c4b6"  
+button_relief = "raised"  
 text_color = "black" 
 Money_color = '#32CD32'
 btn_good_color = '#7deb34'
@@ -88,14 +88,20 @@ window.resizable(False,False)
 window.config(bg=background_color)
 
 
+
+
+
 window.title('Minigame')
 photo = tk.PhotoImage(file='png.png')
-photo2 = tk.PhotoImage(file='png2.png')
+
+PhotoBack = tk.PhotoImage(file='Back22.png')
 window.iconphoto(False,photo)
 width1 = 400
 top = 100
 positionY = 100
 
+label_Back = tk.Label(window, image=PhotoBack)
+label_Back.place(x=-2,y=0)
 
 AposX = width1*1
 AposY = positionY*6
@@ -323,27 +329,9 @@ def on_enter(event):
 def on_leave(event):
     event.widget.config(bg=color_functions)
 
-label_img = tk.Label(window,image=photo2)
+#label_img = tk.Label(window,image=photo2)
 
-def photoPlace1(event):
-    x = event.x
-    y = event.y
-    if x < width1:
-        x = width1
-    elif x > width1*3:
-        x = width1*3
-    else:
-        x = event.x
-    
-    if y > positionY*4:
-        y = positionY*4
-    elif y < positionY:
-        y = positionY
-    else:
-        y = event.y
-    
-    
-    label_img.place(x=x,y=y)
+
 
 
 

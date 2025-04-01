@@ -1,0 +1,37 @@
+Name: The Sims  
+Cout questions: 5  
+
+Questions: В каком году вышла первая игра The Sims?  
+Answer Err1: 1998  
+Answer Err2: 2002  
+Answer Err3: 2005  
+Answer Correct: 2000  
+Cost: 10  
+
+Questions: Как называется валюта в игре The Sims?  
+Answer Err1: Gold  
+Answer Err2: SimPoints  
+Answer Err3: Dollars  
+Answer Correct: Simoleons  
+Cost: 10  
+
+Questions: Какая компания разработала серию The Sims?  
+Answer Err1: Ubisoft  
+Answer Err2: Rockstar Games  
+Answer Err3: Square Enix  
+Answer Correct: Maxis  
+Cost: 10  
+
+Questions: Какой аспект геймплея наиболее важен в The Sims?  
+Answer Err1: Сражения с боссами  
+Answer Err2: Гонки на автомобилях  
+Answer Err3: Путешествия во времени  
+Answer Correct: Симуляция жизни  
+Cost: 10  
+
+Questions: В какой части серии впервые появились эмоции у симов?  
+Answer Err1: The Sims 2  
+Answer Err2: The Sims 1  
+Answer Err3: The Sims 3  
+Answer Correct: The Sims 4  
+Cost: 10  
