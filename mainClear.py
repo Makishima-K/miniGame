@@ -36,6 +36,10 @@ DposY = positionY * 7
 
 MayPosXY = [(AposX, AposY), (BposX, BposY), (CposX, CposY), (DposX, DposY)]
 
+
+btn5050= True
+
+
 # Глобальные переменные
 bank = 0
 k = 0
@@ -46,7 +50,7 @@ question1 = {}
 def extract_data_from_file(filename):
     results = []
     current_question = {}
-
+    filename=filename+'.txt'
     with open(filename, 'r', encoding='utf-8') as file:
         for line in file:
             line = line.strip()
@@ -94,13 +98,14 @@ def goodAnswer(money):
     label_bank.config(text=f'Bank: {bank}$')
     k += 1
     if k == len(question1):
-        End(bank, hidenBank)
+        End(bank, hidenBank,ee=True)
         return
     gameSet(question1[k])
 
 def badAnswer(money):
     global k, hidenBank, bank
-
+    
+    
     sosoN()
     money = int(money)
     hidenBank += money
@@ -108,10 +113,12 @@ def badAnswer(money):
     if k == len(question1):
         End(bank, hidenBank)
         return
+    End(bank, hidenBank,ee=False)
+    return
     gameSet(question1[k])
 
 # Функция для завершения игры
-def End(bank, hidenBank):
+def End(bank, hidenBank,ee=False):
     color_victory = '#15ed93'
     lose_color = '#ed3615'
     draw_color = '#edc915'
@@ -125,17 +132,20 @@ def End(bank, hidenBank):
     btn_4.place_forget()
     btn_50_50.place_forget()
     btn_end.place_forget()
+    btn_Testgame.place_forget()
+    btn_latTest.place_forget()
+    btn_tri.place_forget()
+    show()
 
-    if bank / hidenBank > 0.5:
-        label_end.config(text=f'{bank}/{hidenBank}', bg=color_victory)
-        label_end.place(x=width1 * 1, y=positionY * 4, width=width1 * 2, height=top)
-    elif bank / hidenBank < 0.5:
-        label_end.config(text=f'{bank}/{hidenBank}', bg=lose_color)
+
+
+    if ee:
+        label_end.config(text=f'You win {bank}$', bg=color_victory)
         label_end.place(x=width1 * 1, y=positionY * 4, width=width1 * 2, height=top)
     else:
-        label_end.config(text=f'{bank}/{hidenBank}', bg=draw_color)
+        label_end.config(text=f'You lost', bg=lose_color)
         label_end.place(x=width1 * 1, y=positionY * 4, width=width1 * 2, height=top)
-
+   
 # Функция для начала игры
 def start(a):
     global question1, k, hidenBank, bank
@@ -152,11 +162,16 @@ def start(a):
     btn_2.place(x=width1 * 1, y=positionY * 7, width=width1, height=top)
     btn_3.place(x=width1 * 2, y=positionY * 6, width=width1, height=top)
     btn_4.place(x=width1 * 2, y=positionY * 7, width=width1, height=top)
+    btn_50_50.config(state='normal')
     btn_50_50.place(x=width1 * 1+width1/4, y=positionY * 8+20, width=width1/2, height=top / 2)
     btn_end.place(x=width1 * 2+width1/4, y=positionY * 8+20, width=width1/2, height=top / 2)
     question1 = extract_data_from_file(a)
     name = question1[k]['Name']
     window.title(f'Minigame: {name}')
+    btn_Testgame.place_forget()
+    #btn_Testgame.place_forget()
+    btn_latTest.place_forget()
+    btn_tri.place_forget()
     gameSet(question1[k])
 
 # Функция для завершения игры по кнопке
@@ -168,18 +183,23 @@ def end(bank, file):
 
 # Функции для подсказки 50/50
 def sosoD():
+    btn_50_50.config(state='disabled')
     btn_3.config(state='disabled')
     btn_2.config(state='disabled')
 
 def sosoN():
+    
     btn_3.config(state='normal')
     btn_2.config(state='normal')
 
 # Функция для отображения элементов начала игры
 def show():
-    label_start.place(x=width1 * 1, y=positionY * 5, width=width1 * 2, height=top)
-    ent_start.place(x=width1 * 1, y=positionY * 6, width=width1, height=top / 2)
-    btn_start.place(x=width1 * 2, y=positionY * 6, width=width1, height=top / 2)
+    global AAA
+    AAA = True
+    label_start.place(x=width1 * 1, y=positionY * 6.5, width=width1 * 2, height=top/2)
+    ent_start.place(x=width1 * 1, y=positionY * 7, width=width1, height=top / 2)
+    btn_start.place(x=width1 * 2, y=positionY * 7, width=width1, height=top / 2)
+    btn_tri.place(x=width1, y=positionY * 6.5, width=width1/6, height=top / 4)
 
 # Создание элементов интерфейса
 window = tk.Tk()
@@ -246,7 +266,39 @@ def gameSet(question1):
     btn_4.place(x=MayPosXY[a[3]][0], y=MayPosXY[a[3]][1], width=width1, height=top)
 
 # Отображение элементов начала игры
-show()
+AAA = True
+
+def frame():
+    global AAA
+    if AAA:
+        btn_Testgame.place(x=width1 * 1, y=positionY * 6, width=width1, height=top / 2)
+        btn_latTest.place(x=width1 * 2, y=positionY * 6, width=width1, height=top / 2)
+
+        AAA =False
+        
+    else:
+        btn_Testgame.place_forget()
+        btn_latTest.place_forget()
+        AAA = True
+        
+
+    
+
+btn_Testgame = tk.Button(window, command=lambda: start('test'), text='Test', bg=color_functions, relief=button_relief, bd=border_size, font=font_size, fg=text_color, activebackground=btn_bad_color)
+
+btn_latTest = tk.Button(window, command=lambda: start('Matemātikas viktorīna'), text='Matemātikas viktorīna', bg=color_functions, relief=button_relief, bd=border_size, font=font_size, fg=text_color, activebackground=btn_bad_color)
+
+btn_tri = tk.Button(window, command=lambda: frame(), text='△', bg=color_functions, relief=button_relief, bd=border_size, font=font_size, fg=text_color, activebackground=btn_bad_color)
+
+
+
+
+
+
+
+
+
+
 
 # Обработка событий наведения мыши
 hover_color = '#15ed97'
@@ -269,6 +321,16 @@ btn_4.bind("<Leave>", on_leave)
 btn_start.bind("<Enter>", on_enter)
 btn_start.bind("<Leave>", on_leave)
 
+btn_latTest.bind("<Enter>", on_enter)
+btn_Testgame.bind("<Enter>", on_enter)
+
+btn_latTest.bind("<Leave>", on_leave)
+btn_Testgame.bind("<Leave>", on_leave)
+
+btn_tri.bind("<Enter>", on_enter)
+btn_tri.bind("<Leave>", on_leave)
+
+
 
 def on_enter1(event):
     event.widget.config(bg=hover_color)
@@ -287,5 +349,5 @@ btn_50_50.bind("<Enter>", on_enter1)
 btn_50_50.bind("<Leave>", on_leave1)
 btn_end.bind("<Enter>", on_enter2)
 btn_end.bind("<Leave>", on_leave2)
-
+show()
 window.mainloop()
